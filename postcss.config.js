@@ -8,7 +8,7 @@ module.exports = {
       },
       features: {
         'focus-within-pseudo-class': false
-      }
+      },
       stage: 2
     }
   }
