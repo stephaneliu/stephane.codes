@@ -12,6 +12,7 @@ const path = require("path");
 const rootDir = path.resolve(__dirname, "..")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 // Input and output
 
@@ -118,6 +119,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "../css/[name].[contenthash].css",
     }),
+    new CssMinimizerPlugin(),
     new WebpackManifestPlugin({
       fileName: path.resolve(rootDir, ".bridgetown-webpack", "manifest.json"),
     }),
