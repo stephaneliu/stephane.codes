@@ -6,7 +6,15 @@ class PurgeCSS < SiteBuilder
         unless File.exist?(purgecss_file)
           config_js = <<~PURGE
             module.exports = {
-              content: ['frontend/javascript/*.js','./output/**/*.html'],
+              content: [
+                './frontend/javascript/*.js',
+                './output/**/*.html',
+                './src/**/*.rb',
+                './src/**/*.erb',
+                './src/**/*.html',
+                './src/**/*.liquid',
+                './src/**/*.md'
+              ],
               output: "./output/_bridgetown/static/css"
             }
           PURGE
