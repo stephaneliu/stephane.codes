@@ -15,7 +15,8 @@ class PurgeCSS < SiteBuilder
                 './src/**/*.liquid',
                 './src/**/*.md'
               ],
-              output: "./output/_bridgetown/static/css"
+              output: "./output/_bridgetown/static/css",
+              defaultExtractor: content => content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []
             }
           PURGE
           File.write(purgecss_file, config_js.strip)
